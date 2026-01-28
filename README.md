@@ -1,0 +1,5 @@
+Desenvolvi o projeto Conecta Libras, que consiste em um aplicativo e um site web com foco na inclusão de pessoas surdas, especialmente em salas de aula do ensino fundamental e médio. O site foi criado para divulgar o aplicativo e apresentar informações relevantes sobre a história da comunidade surda e seus direitos no Brasil.
+
+O aplicativo utiliza conceitos de IoT para captar o som do ambiente por meio de um microfone omnidirecional e um sensor de áudio, realizando a transcrição das falas tanto para Libras quanto para texto, atendendo diferentes formas de comunicação. Esse projeto foi desenvolvido durante o curso de Análise e Desenvolvimento de Sistemas no SENAI e me proporcionou o aprimoramento de habilidades em IoT e desenvolvimento web, além de reforçar a importância da tecnologia como ferramenta de inclusão social.
+
+Observação: trata-se de um site amador/iniciante, desenvolvido com foco no aprendizado, por isso ainda não possui muitas funcionalidades nem total responsividade. No entanto, é um projeto com grande potencial de aprimoramento e expansão no futuro.
