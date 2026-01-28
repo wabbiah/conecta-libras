@@ -1,0 +1,284 @@
+    /* --- Reset e corpo --- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    @font-face {
+      font-family: 'sanchez';
+      src: url('../../Fontes/sanchez-font.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'gliker';
+      src: url('../../Fontes/gliker-regular.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+
+
+    /* --- Menu fixo --- */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 999;
+      background-color: rgba(4, 51, 76, 0.6);
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .logo {
+      color: #FFBE1D;
+      font-size: 22px;
+      font-weight: bold;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .pill-button {
+      background-color: #063F5C;
+      border: none;
+      border-radius: 50px;
+      font-size: 16px;
+      font-family: 'sanchez';
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      height: 50px;
+      padding: 0;
+      gap: 0;
+      width: 400px;
+    }
+
+    .pill-button span,
+    .pill-button a {
+      color: #FFBE1D;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      transition: background-color 0.3s ease;
+      white-space: nowrap;
+      border-radius: 50px;
+      text-decoration: none;
+    }
+
+    .pill-button span:hover,
+    .pill-button a:hover {
+      background-color: #01283C;
+    }
+
+    .search-container {
+      display: flex;
+      align-items: center;
+      background-color: white;
+      border-radius: 50px;
+      padding: 0 15px;
+      height: 40px;
+      width: 500px;
+    }
+
+    .search-input {
+      flex: 1;
+      border: none;
+      outline: none;
+      font-size: 14px;
+      padding: 8px 0;
+      background: transparent;
+    }
+
+    .search-img {
+      width: 22px;
+      height: 22px;
+      cursor: pointer;
+      margin-left: 8px;
+    }
+
+    .user-section {
+      display: flex;
+      align-items: center;
+      background-color: #FFBE1D;
+      text-decoration: none;
+      border-radius: 60px;
+      height: 50px;
+      width: 150px;
+      font-family: sanchez;
+      justify-content: center;
+      color: #01283C;
+      cursor: pointer;
+      font-size: 17px;
+      border: none;
+    }
+
+    .user-section:hover {
+    background-color: #e6ac17;
+    transform: scale(1.05);
+    }
+
+    .user-avatar {
+      width: 32px;
+      height: 32px;
+      background-color: #ddd;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .settings-icon {
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    /* --- Popup Logout --- */
+    .popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      display: none;
+    }
+
+    .popup-content {
+      background: white;
+      padding: 30px 40px;
+      border-radius: 15px;
+      text-align: center;
+      max-width: 400px;
+      font-family: 'sanchez', sans-serif;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .popup-content h3 {
+      font-size: 22px;
+      color: #04334C;
+      margin-bottom: 15px;
+    }
+
+    .popup-content p {
+      color: #1fa3d1;
+      font-size: 16px;
+      margin-bottom: 25px;
+    }
+
+    .popup-buttons {
+      display: flex;
+      justify-content: space-around;
+      gap: 10px;
+    }
+
+    .popup-buttons button,
+    #close-popup-btn {
+      padding: 10px 25px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    #cancel-btn {
+      background-color: #ccc;
+      color: #04334C;
+    }
+
+    #logout-btn,
+    #close-popup-btn {
+      background-color: #FFBE1D;
+      color: #04334C;
+    }
+
+    .popup-buttons button:hover,
+    #close-popup-btn:hover {
+      background-color: #e6ac17;
+    }
+
+    @media (max-width: 768px) {
+      .search-container { width: 200px; }
+      .pill-button { width: 250px; }
+    }
+
+    .user-name, .user-avatar {
+        cursor: pointer;
+        font-family: sanchez;
+    }
+
+    /* Popup Logout - Estilizado */
+#logout-popup .popup-content {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 20px;
+  max-width: 400px;
+  text-align: center;
+  font-family: 'sanchez', sans-serif;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#logout-popup .popup-content h3 {
+  font-size: 22px;
+  color: #04334C;
+  margin-bottom: 15px;
+}
+
+#logout-popup .popup-content p {
+  color: #1fa3d1;
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+
+#logout-popup .popup-buttons {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+#logout-popup .popup-buttons button,
+#logout-popup #close-popup-btn {
+  padding: 10px 25px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+#logout-popup .popup-buttons #cancel-btn {
+  background-color: #ccc;
+  color: #04334C;
+}
+
+#logout-popup .popup-buttons #logout-btn,
+#logout-popup #close-popup-btn {
+  background-color: #FFBE1D;
+  color: #04334C;
+}
+
+#logout-popup .popup-buttons button:hover,
+#logout-popup #close-popup-btn:hover {
+  background-color: #e6ac17; /* amarelo mais escuro ao passar o mouse */
+}

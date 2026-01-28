@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inclusão</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="../Imagens/logo.png">
+</head>
+<body>
+    <div id="menu-container"></div>
+
+    <script>
+  function getBasePrefix() {
+    const isGhPages = window.location.hostname.endsWith('github.io');
+    const parts = window.location.pathname.split('/').filter(Boolean);
+    const pathParts = isGhPages ? parts.slice(1) : parts;
+    const depth = Math.max(0, pathParts.length - 1);
+    return '../'.repeat(depth);
+  }
+
+  async function carregarMenu() {
+    try {
+      // 1️⃣ Carrega o HTML
+      const basePrefix = getBasePrefix();
+      const response = await fetch(`${basePrefix}Incluir/Menu/menu.html`);
+      const rawHtml = await response.text();
+      const html = rawHtml.replace(/\.\.\//g, basePrefix);
+      document.getElementById('menu-container').innerHTML = html;
+
+      // 2️⃣ Verifica se o CSS já foi adicionado
+      if (!document.querySelector(`link[href="${basePrefix}Incluir/Menu/menu.css"]`)) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = `${basePrefix}Incluir/Menu/menu.css`;
+        document.head.appendChild(link);
+      }
+
+      // 3️⃣ Carrega o JS do menu
+      const script = document.createElement('script');
+      script.src = `${basePrefix}Incluir/Menu/menu.js`;
+      document.body.appendChild(script);
+
+    } catch (error) {
+      console.error('Erro ao carregar o menu:', error);
+    }
+  }
+
+  carregarMenu();
+</script>
+
+    <div class="imagem-container">
+        <img src="../Imagens/Pessoas.jpg" alt="Imagem" class="img-fundo">
+
+        <div class="caixa-info" id="card">
+        <h1>A comunidade surda</h1>
+        <p>Conheça as lutas, conquistas e a importância da Libras na construção de uma sociedade mais inclusiva. Explore conteúdos que valorizam a identidade surda e entenda como cada passo dessa trajetória contribuiu para garantir direitos, acessibilidade e respeito.</p>
+        </div>
+    </div>
+
+    <main>
+    <section class="historia">
+        <div class="texto">
+        <h1>Conheça a História da Comunidade Surda</h1>
+        <p>Explore as lutas, conquistas e a importância da Libras na construção de uma sociedade mais inclusiva.</p>
+        <button type="button" class="botao">Iniciar Jornada</button> <!-- quando clicar no botão vai pra outra página, mostrando todas as informações  -->
+        </div>
+        <img class="comunidade" src="../Imagens/comunidade.png" alt="Imagem que representa a comunidade surda.">
+    </section>
+
+    <section class="linhaDoTempo">
+    <h2>Jornada do Conhecimento</h2>
+    <div class="timeline">
+        <div class="etapa"><span class="ponto"></span><p>Antiguidade</p></div>
+        <div class="etapa"><span class="ponto"></span><p>Renascimento</p></div>
+        <div class="etapa"><span class="ponto"></span><p>Direitos</p></div>
+        <div class="etapa"><span class="ponto"></span><p>Calendário</p></div>
+        <div class="etapa"><span class="ponto"></span><p>Libras</p></div>
+    </div>
+        <div id="modalAccordion" class="modal-accordion">
+            <span id="fecharModal" style="float:right; cursor:pointer; font-size:24px;">&times;</span>
+            <h3 id="modalTitulo">Título</h3>
+            <p id="modalTexto">Texto explicativo...</p>
+            <button id="proximo" class="botao-proximo">&gt;</button>
+        </div>
+    </section>
+
+    <section class="importancia">
+        <div class="porque">
+            <h3>Por que é importante conhecer a história da comunidade surda?</h3>
+            <p>Entender sua trajetória ajuda a valorizar a identidade surda e a promover a inclusão.</p>
+        </div>
+
+        <div class="lista">
+            <ul>
+                <li>Lutas e conquistas;</li>
+                <li>Legislação e direitos;</li>
+                <li>Importância da Libras.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="direitos">
+        <h2>O que são os direitos das pessoas surdas?</h2>
+        <div class="tudo2">
+            <div class="um">
+                <img class="inclusao" src="../Imagens/inclusao.png" alt="Cidadania e Acessibilidade">
+                <p>Cidadania e Acessibilidade</p>
+                <button type="button" class="botao">Saiba Mais</button> <!-- quando clicar no botão vai pra outra página, mostrando todas as informações  -->
+            </div>
+
+            <div class="dois">
+                    <img class="informacao" src="../Imagens/informacao.png" alt="Acesso à Informação">
+                    <p>Acesso à Informação</p>
+                    <button type="button" class="botao">Saiba Mais</button> <!-- quando clicar no botão vai pra outra página, mostrando todas as informações  -->
+            </div> 
+
+            <div class="tres">
+                <img class="saude" src="../Imagens/saude.png" alt="Saúde">
+                <p>Saúde</p>
+                <button type="button" class="botao">Saiba Mais</button> <!-- quando clicar no botão vai pra outra página, mostrando todas as informações  -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal para "Saiba Mais" -->
+<div id="modalInfo" class="modal-info">
+  <div class="modal-content">
+    <span id="fecharInfo" class="fechar">&times;</span>
+    <h3 id="modalInfoTitulo">Título</h3>
+    <p id="modalInfoTexto">Texto informativo...</p>
+  </div>
+</div>
+
+
+    <section class="aplicativo">
+        <div class="texto2">
+        <h1>Baixe nosso aplicativo de acessibilidade</h1>
+        <p>Com o nosso aplicativo você consegue se comunicar de forma mais inclusiva e intuitiva com pessoas que possuem deficiência auditiva.</p>
+        <button type="button" class="botao"><img class="icone" src="../Imagens/phoneIcon.png" alt="Baixar aplicativo">Baixar Aplicativo</button> <!-- quando clicar no botão vai pra outra página, mostrando todas as informações  -->
+        </div>
+        <img class="baixar" src="../Imagens/baixeOApp.png" alt="Baixar aplicativo">
+    </section>
+    </main> 
+
+    <script src="script.js"></script>
+
+    <div id="footer-container"></div>
+
+<script>
+  async function carregarFooter() {
+    try {
+      const basePrefix = getBasePrefix();
+      const response = await fetch(`${basePrefix}Incluir/Footer/footer.html`);
+      const rawHtml = await response.text();
+      const html = rawHtml.replace(/\.\.\//g, basePrefix);
+      document.getElementById('footer-container').innerHTML = html;
+
+      if (!document.querySelector(`link[href="${basePrefix}Incluir/Footer/footer.css"]`)) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = `${basePrefix}Incluir/Footer/footer.css`;
+        document.head.appendChild(link);
+      }
+
+    } catch (error) {
+      console.error('Erro ao carregar o footer:', error);
+    }
+  }
+
+  carregarFooter();
+  </script>
+</body>
+</html>
+

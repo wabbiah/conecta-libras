@@ -1,0 +1,238 @@
+ * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    @font-face {
+      font-family: 'sanchez';
+      src: url('../Fontes/sanchez-font.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'gliker';
+      src: url('../Fontes/gliker-regular.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+
+    body {
+  background: radial-gradient(circle at 20% 30%, #419ebd, transparent 40%),
+              radial-gradient(circle at 80% 70%, #90cce0, transparent 40%),
+              linear-gradient(135deg, #01283c, #063f5c);
+  background-blend-mode: screen;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: inherit;
+  filter: blur(30px) brightness(1.1);
+  z-index: -1;
+}
+
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'gliker', sans-serif;
+    }
+
+
+/* === LOGIN E CADASTRO === */
+/* ======== CONTEÚDO PRINCIPAL ======== */
+.loginECadastro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 120px); /* altura ajustada para não ficar atrás do menu */
+  gap: 0;
+  padding-top: 120px; /* empurra o conteúdo para baixo do menu fixo */
+  margin-bottom: 200px;
+  margin-top: 50px;
+}
+
+/* ======== BLOCO DE LOGIN ======== */
+.login {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 60px 50px;
+  width: 550px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 50px;
+}
+
+.login h1 {
+  font-size: 32px;
+  margin-bottom: 5px;
+  font-weight: 100;
+  color: #01283C;
+}
+
+.login h2 {
+  font-size: 16px;
+  font-weight: 400;
+  color: black;
+  margin-bottom: 20px;
+  font-weight: 100;
+  color: #01283C;
+}
+
+.login h3 {
+  align-self: flex-start;
+  font-size: 14px;
+  color: #000;
+  margin-bottom: 5px;
+  color: #01283C;
+}
+
+.login input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: #eee;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  height: 40px;
+}
+
+.login button {
+  background-color: #3E9DBD;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 40px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+  height: 50px;
+}
+
+.login button:hover {
+  background-color: #347f99;
+}
+
+/* ======== BLOCO DE CADASTRO ======== */
+.cadastro {
+  color: white;
+  border-radius: 20px;
+  padding: 50px 40px;
+  width: 550px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.cadastro h1 {
+  font-size: 32px;
+  margin-bottom: 8px;
+  text-align: center;
+  font-weight: 200;
+}
+
+.cadastro h2 {
+  font-size: 16px;
+  font-weight: 200;
+  color: #cfe4ed;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.cadastro h3 {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #fff;
+}
+
+/* ======== CONTAINER DOS CAMPOS ======== */
+.infoDeLogin {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 30px;
+  width: 100%;
+  margin-bottom: 35px;
+}
+
+/* ======== INPUTS ======== */
+.cadastro input {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  background-color: #2E6D83;
+  border-radius: 10px;
+  font-size: 14px;
+  color: white;
+  outline: none;
+  height: 40px;
+}
+
+.cadastro input::placeholder {
+  color: #cfe4ed;
+}
+
+/* ======== BOTÃO ======== */
+.cadastro button {
+  background-color: #FFBE1D;
+  color: #01283C;
+  border: none;
+  border-radius: 20px;
+  padding: 14px 50px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+  height: 50px;
+}
+
+.cadastro button:hover {
+  background-color: #ffcb47;
+}
+
+/* ======== ORGANIZAÇÃO DOS CAMPOS ======== */
+.nomes {
+    display: block;
+    height: 145px;
+}
+
+.cadastro {
+  margin-top: 10px;
+}
+
+.emailESenha {
+    display: block;
+    height: 145px;
+}
+
+/* ======== FORMULÁRIO DENTRO DAS DIVS ======== */
+.loginECadastro form {
+  display: flex;
+  flex-direction: row; /* faz as divs ficarem lado a lado */
+  gap: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.titulos {
+    display: flexbox;
+    text-align: center;
+}
+
+.usuario, .senha {
+    margin-top: 22px;
+}

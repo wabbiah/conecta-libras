@@ -1,0 +1,193 @@
+<!-- COM CADASTRO -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Conecta Libras</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="Imagens/logo.png">
+  <link rel="stylesheet" href="Tela Inicial/inicio.css">
+</head>
+<body>
+
+    <div id="menu-container"></div>
+
+    <script>
+  function getBasePrefix() {
+    const isGhPages = window.location.hostname.endsWith('github.io');
+    const parts = window.location.pathname.split('/').filter(Boolean);
+    const pathParts = isGhPages ? parts.slice(1) : parts;
+    const depth = Math.max(0, pathParts.length - 1);
+    return '../'.repeat(depth);
+  }
+
+  async function carregarMenu() {
+    try {
+      // 1️⃣ Carrega o HTML
+      const basePrefix = getBasePrefix();
+      const response = await fetch(`${basePrefix}Incluir/Menu/menu.html`);
+      const rawHtml = await response.text();
+      const html = rawHtml.replace(/\.\.\//g, basePrefix);
+      document.getElementById('menu-container').innerHTML = html;
+
+      // 2️⃣ Verifica se o CSS já foi adicionado
+      if (!document.querySelector(`link[href="${basePrefix}Incluir/Menu/menu.css"]`)) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = `${basePrefix}Incluir/Menu/menu.css`;
+        document.head.appendChild(link);
+      }
+
+      // 3️⃣ Carrega o JS do menu
+      const script = document.createElement('script');
+      script.src = `${basePrefix}Incluir/Menu/menu.js`;
+      document.body.appendChild(script);
+
+    } catch (error) {
+      console.error('Erro ao carregar o menu:', error);
+    }
+  }
+
+  carregarMenu();
+</script>
+
+
+  <!-- Carrossel principal -->
+  <div class="carousel-container">
+    <div class="carousel-slide active">
+      <img src="Imagens/inclusao.png" alt="Slide 1">
+      <div>
+        <h1>CONECTA LIBRAS</h1>
+        <p>A comunicação não tem barreiras quando existe acessibilidade. O Conecta Libras aproxima pessoas e amplia conexões através da Língua Brasileira de Sinais, criando oportunidades, fortalecendo laços e promovendo inclusão de forma prática e eficaz.</p>
+        <button class="btn-saiba-mais">Saiba mais</button>
+      </div>
+    </div>
+    <div class="carousel-slide">
+      <img src="Imagens/acessibilidade.png" alt="Slide 2">
+      <div>
+        <h1>INCLUSÃO E ACESSIBILIDADE</h1>
+        <p>Promovemos um ambiente onde todos possam participar de forma igualitária. A acessibilidade é o primeiro passo para garantir respeito e dignidade, tornando o aprendizado, a comunicação e a convivência mais fáceis e significativas para cada indivíduo.</p>
+        <button class="btn-saiba-mais">Saiba mais</button>
+      </div>
+    </div>
+    <div class="carousel-slide">
+      <img src="Imagens/interprete.webp" alt="Slide 3">
+      <div>
+        <h1>SOMOS TODOS IGUAIS</h1>
+        <p>Valorizamos a diversidade e acreditamos em uma sociedade mais justa. A inclusão transforma vidas, promove empatia e cria um futuro com mais oportunidades para todos, respeitando cada pessoa sem distinção ou preconceito.</p>
+        <button class="btn-saiba-mais">Saiba mais</button>
+      </div>
+    </div>
+
+    <div class="carousel-indicators">
+      <div class="indicator active" data-slide="0"></div>
+      <div class="indicator" data-slide="1"></div>
+      <div class="indicator" data-slide="2"></div>
+    </div>
+  </div>
+
+  <!-- Cartão branco com carrossel interno -->
+  <div class="bloco-branco">
+    <div class="inner-carousel">
+      <div class="inner-slide active">
+        <img src="Imagens/conectando.png" alt="Slide 1">
+      </div>
+      <div class="inner-slide">
+        <img src="Imagens/aprendapratique.png" alt="Slide 2">
+      </div>
+      <div class="inner-slide">
+        <img src="Imagens/converta.png" alt="Slide 3">
+      </div>
+    </div>
+
+    <div class="inner-indicators">
+      <div class="inner-indicator active" data-slide="0"></div>
+      <div class="inner-indicator" data-slide="1"></div>
+      <div class="inner-indicator" data-slide="2"></div>
+    </div>
+  </div>
+
+  <!-- FAIXA AZUL AO FINAL -->
+  <!-- <section class="faixa">
+    <div class="conteudo">
+      <div class="celular">
+        <img src="Imagens/app.png" alt="Celular com fundo amarelo" class="img-celular">
+      </div>
+
+      <div class="texto">
+        <h2>VEJA O<br>NOSSO APP</h2>
+        <img src="Imagens/qrcode.png" alt="QR Code" class="qr">
+      </div>
+    </div>
+  </section> -->
+
+  <!-- Feedback -->
+  <h2 class="feedback-title">FEEDBACK</h2>
+  <div class="feedback-container">
+    <button class="feedback-arrow left" id="prev">&#10094;</button>
+    <div class="feedback-carousel">
+      <div class="feedback-cards" id="cards">
+        <div class="feedback-card">
+           <div class="circle" style="background-image: url('Imagens/kimtaehyung.webp');"></div>
+          <h3>Kim Taehyung</h3>
+          <p>O Conecta Libras tornou a comunicação muito mais fácil! A interface é super intuitiva e o conteúdo é excelente. Adorei a experiência!</p>
+        </div>
+
+
+        <div class="feedback-card">
+           <div class="circle" style="background-image: url('Imagens/kim.jpeg');"></div>
+          <h3>Kim Hongjoong</h3>
+          <p>Uma plataforma incrível! A inclusão é realmente prioridade aqui. Estou impressionado com a qualidade e praticidade do site e aplicativo.</p>
+        </div>
+
+
+        <div class="feedback-card">
+        <div class="circle" style="background-image: url('Imagens/daniela.webp');"></div>
+          <h3>Daniela Avanzini</h3>
+          <p>Simplesmente sensacional! O Conecta Libras aproxima pessoas de forma prática e eficiente. Recomendo a todos que buscam acessibilidade.</p>
+        </div>
+
+        <div class="feedback-card">
+          <div class="circle" style="background-image: url('Imagens/andrew.jfif');"></div>
+          <h3>Andrew Garfield</h3>
+          <p>O site é muito bem feito, bonito e fácil de navegar. Sinto que realmente faz a diferença na comunicação e inclusão de todos.</p>
+        </div>
+      </div>
+    </div>
+    <button class="feedback-arrow right" id="next">&#10095;</button>
+  </div>
+
+  <script src="Tela Inicial/inicio.js"></script>
+
+<div id="footer-container"></div>
+
+<script>
+  async function carregarFooter() {
+    try {
+      // 1️⃣ Carrega o HTML
+      const basePrefix = getBasePrefix();
+      const response = await fetch(`${basePrefix}Incluir/Footer/footer.html`);
+      const rawHtml = await response.text();
+      const html = rawHtml.replace(/\.\.\//g, basePrefix);
+      document.getElementById('footer-container').innerHTML = html;
+
+      // 2️⃣ Verifica se o CSS já foi adicionado
+      if (!document.querySelector(`link[href="${basePrefix}Incluir/Footer/footer.css"]`)) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = `${basePrefix}Incluir/Footer/footer.css`;
+        document.head.appendChild(link);
+      }
+
+    } catch (error) {
+      console.error('Erro ao carregar o footer:', error);
+    }
+  }
+
+  carregarFooter();
+  </script>
+</body>
+</html>
+
+

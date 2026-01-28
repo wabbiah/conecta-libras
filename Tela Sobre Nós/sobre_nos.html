@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre nós</title>
+    <link rel="stylesheet" href="style_sobre.css">
+    <link rel="icon" type="image/png" href="../Imagens/logo.png">
+</head>
+<body>
+    <div id="menu-container"></div>
+
+    <script>
+  function getBasePrefix() {
+    const isGhPages = window.location.hostname.endsWith('github.io');
+    const parts = window.location.pathname.split('/').filter(Boolean);
+    const pathParts = isGhPages ? parts.slice(1) : parts;
+    const depth = Math.max(0, pathParts.length - 1);
+    return '../'.repeat(depth);
+  }
+
+  async function carregarMenu() {
+    try {
+      const basePrefix = getBasePrefix();
+      const response = await fetch(`${basePrefix}Incluir/Menu/menu.html`);
+      const rawHtml = await response.text();
+      const html = rawHtml.replace(/\.\.\//g, basePrefix);
+      document.getElementById('menu-container').innerHTML = html;
+
+      if (!document.querySelector(`link[href="${basePrefix}Incluir/Menu/menu.css"]`)) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = `${basePrefix}Incluir/Menu/menu.css`;
+        document.head.appendChild(link);
+      }
+
+      const script = document.createElement('script');
+      script.src = `${basePrefix}Incluir/Menu/menu.js`;
+      document.body.appendChild(script);
+
+    } catch (error) {
+      console.error('Erro ao carregar o menu:', error);
+    }
+  }
+
+  carregarMenu();
+</script>
+
+<section class="body">
+                <img src="../Imagens/BackLua.png" alt="" class="lua-fundo">
+    <div class="section1">
+
+
+        <div class="textoSection1">
+            <h2>Conecta Libras</h2>
+        <h6>O Conecta Libras nasceu da necessidade de tornar a comunicação entre surdos e ouvintes mais simples, prática e acessível. Queremos que qualquer pessoa, independente de suas condições auditivas, tenha as mesmas oportunidades de aprendizado, interação e convivência em sociedade.</h6>
+        </div>
+        <div class="banner1">
+            <img class="imagenzona" src="../Imagens/Banner1.png" alt="">
+        </div>
+    </div>
+
+    <div class="codBack">
+       <div class="codigo">
+        <div class="lateral">
+            <div class="qrCode">
+                <img src="../Imagens/QRCodeTemplate - Copia.png" alt="QR Code">
+            </div>
+            <h3>Participe da nossa jornada de inclusão</h3>
+        </div>
+        <h4 class="transcreva">Transcreva fala em Libras, texto em fala ou vice-versa. Nos propomos a auxiliar a comunicação de deficientes auditivos em ambiente escolar e na vida!</h4>
+        <div class="baixe">
+            <h4>Experimente agora</h4>
+            <div class="dividendo"></div>
+            <h3>Baixar</h3>
+        </div>
+        
+        
+    </div> 
+    </div>
+    
+
+    <div class="section2">
+        <div class="content">
+            <h2>Os problemas que buscamos resolver</h2>
+        <h6>No Brasil, milhões de pessoas têm algum grau de deficiência auditiva. Apesar da Libras ser reconhecida como a segunda língua oficial do país, muitas vezes a falta de intérpretes ou recursos de acessibilidade ainda limita a participação plena de estudantes e cidadãos surdos.</h6>
+        <h6 class="space">Dentro das escolas, essa barreira se torna ainda mais evidente:</h6>
+        </div>       
+    </div>
+
+    <div class="sobrepor">
+       <div class="cards">
+        <div class="card1">
+            <div class="card">
+               <div class="circulo" >
+                <img class="icone" src="../Imagens/IconeProfessores.png" alt="">
+            </div>
+            <h3>Professores</h3>
+            <h4>Professores encontram desafios em transmitir conteúdos de forma acessível.</h4> 
+            </div>
+            
+        </div>
+        <div class="card2">
+            <div class="card">
+               <div class="circulo" >
+                <img class="icone" src="../Imagens/IconeAulas.png" alt="">
+            </div>
+            <h3>Acompanhamento das aulas</h3>
+            <h4>Estudantes enfrentam dificuldades em acompanhar aulas expositivas.</h4> 
+            </div>
+            
+        </div>
+        <div class="card3">
+            <div class="card">
+               <div class="circulo" >
+                <img class="icone" src="../Imagens/IconeComunicacao.png" alt="">
+            </div>
+            <h3>Comunicação</h3>
+            <h4>A interação entre colegas pode ficar restrita, dificultando a inclusão social.</h4> 
+            </div>
+            
+        </div>
+    </div> 
+    </div>
+    
+    <div class="section3">
+        <div class="textoSection3">
+            <h2>Nossa solução</h2>
+        <h6>O Conecta Libras oferece três recursos principais: converte falas em texto com legendas automáticas, transforma mensagens escritas em voz e traduz conteúdos para Libras em tempo real. Essas funcionalidades tornam a comunicação mais simples e acessível em escolas e em diversas situações do cotidiano.</h6>
+        </div>
+        <div class="banner1">
+            <img class="imagenzona" src="../Imagens/Banner3.png" alt="">
+        </div>
+    </div>
+    <div class="dividido"></div>
+
+
+    <div class="section4">
+        <div class="bannerOutro">
+            <img class="imagenzona" src="../Imagens/Banner4.png" alt="">
+        </div>
+        <div class="textoSection4">
+            <h2>Quem somos</h2>
+        <h6>Somos uma equipe multidisciplinar formada por estudantes comprometidas com inovação e inclusão. Nosso objetivo é construir pontes de comunicação que promovam respeito, igualdade de oportunidades e convivência entre diferentes realidades, criando soluções acessíveis que realmente façam a diferença.</h6>
+        <h6>Somos uma equipe multidisciplinar formada por estudantes comprometidas com inovação e inclusão. Nosso objetivo é construir pontes de comunicação que promovam respeito, igualdade de oportunidades e convivência entre diferentes realidades, criando soluções acessíveis que realmente façam a diferença.</h6>
+        </div>
+        
+    </div>
+    <div class="dividido"></div>
+
+
+    <div class="section5">
+        <div class="textoSection5">
+            <h2>A comunidade surda</h2>
+        <h6>A comunidade surda é rica em cultura, história e linguagem própria, com a Libras sendo um elemento central que conecta pessoas e fortalece identidades. Apesar das barreiras que ainda existem, a comunidade continua construindo espaços de aprendizado, arte e convivência, mostrando força e resiliência.</h6>
+        <div class="botao">
+            <h6>Saiba mais</h6>
+        </div>
+        </div>
+        <h4>Quer conhecer mais sobre a história, conquistas e desafios da comunidade surda? Descubra na nossa página de Inclusão e veja como a comunicação acessível transforma vidas.</h4>
+    </div>
+    <script src="sobre_nos.js"></script>
+</section>
+
+    <div id="footer-container"></div>
+
+<script>
+  async function carregarFooter() {
+    try {
+      const basePrefix = getBasePrefix();
+      const response = await fetch(`${basePrefix}Incluir/Footer/footer.html`);
+      const rawHtml = await response.text();
+      const html = rawHtml.replace(/\.\.\//g, basePrefix);
+      document.getElementById('footer-container').innerHTML = html;
+
+      if (!document.querySelector(`link[href="${basePrefix}Incluir/Footer/footer.css"]`)) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = `${basePrefix}Incluir/Footer/footer.css`;
+        document.head.appendChild(link);
+      }
+
+    } catch (error) {
+      console.error('Erro ao carregar o footer:', error);
+    }
+  }
+
+  carregarFooter();
+  </script>
+</body>
+</html>
+

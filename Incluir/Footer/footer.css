@@ -1,0 +1,142 @@
+footer {
+  background-color: #0b3b5c;
+  color: white;
+  padding: 60px 40px 40px 40px;
+  position: relative;
+  font-size: 16px;
+  font-family: sanchez;
+}
+
+h3 {
+  font-family: gliker;
+  font-weight: 200;
+}
+
+.back-to-top {
+  display: inline-block;
+  background-color: #1fa3d1;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 20px;
+  text-decoration: none;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bold;
+  font-size: 16px;
+  transition: background 0.3s;
+  z-index: 10;
+}
+
+.back-to-top:hover {
+  background-color: #1489b3;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: auto;
+  gap: 40px;
+}
+
+.footer-section {
+  flex: 1 1 220px;
+  margin: 0 10px;
+  text-align: center;
+}
+
+.footer-section p, 
+.footer-section a {
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  line-height: 1.6;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
+.footer-section h3 {
+  color: #ffb300; /* amarelo */
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+/* Newsletter */
+.newsletter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.newsletter input[type="email"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  flex: 1;
+  font-size: 16px;
+  max-width: 220px;
+}
+
+.newsletter button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 5px;
+  background-color: #1fa3d1;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+}
+
+.newsletter button:hover {
+  background-color: #1489b3;
+}
+
+/* Contato e redes sociais */
+.contact-images,
+.social-images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  font-family: 'gliker';
+}
+
+.contact-images a img,
+.social-images a img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  display: block;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.contact-images a img:hover,
+.social-images a img:hover {
+  transform: scale(1.1);
+}
+
+@media(max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .newsletter input[type="email"] {
+    width: 200px;
+  }
+}

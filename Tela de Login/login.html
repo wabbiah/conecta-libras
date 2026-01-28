@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login ou cadastro</title>
+    <link rel="stylesheet" href="login.css">
+     <link rel="icon" type="image/png" href="../Imagens/logo.png">
+</head>
+<body>
+    <div id="menu-container"></div>
+
+    <script>
+  function getBasePrefix() {
+    const isGhPages = window.location.hostname.endsWith('github.io');
+    const parts = window.location.pathname.split('/').filter(Boolean);
+    const pathParts = isGhPages ? parts.slice(1) : parts;
+    const depth = Math.max(0, pathParts.length - 1);
+    return '../'.repeat(depth);
+  }
+
+  async function carregarMenu() {
+    try {
+      const basePrefix = getBasePrefix();
+      const response = await fetch(`${basePrefix}Incluir/Menu/menu.html`);
+      const rawHtml = await response.text();
+      const html = rawHtml.replace(/\.\.\//g, basePrefix);
+      document.getElementById('menu-container').innerHTML = html;
+
+      if (!document.querySelector(`link[href="${basePrefix}Incluir/Menu/menu.css"]`)) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = `${basePrefix}Incluir/Menu/menu.css`;
+        document.head.appendChild(link);
+      }
+
+      const script = document.createElement('script');
+      script.src = `${basePrefix}Incluir/Menu/menu.js`;
+      document.body.appendChild(script);
+
+    } catch (error) {
+      console.error('Erro ao carregar o menu:', error);
+    }
+  }
+
+  carregarMenu();
+</script>
+
+<!-- PARTE DO LOGIN -->
+<div class="loginECadastro">
+    <form method="POST" action="" onsubmit="processarLogin(event)">
+      <input type="hidden" name="acao" value="login">
+    <div class="login">
+        <h1>Entre com sua conta</h1>
+        <h2>Se você já tem uma conta</h2>
+
+        <h3>E-mail</h3>
+        <input type="email" placeholder="E-mail">
+
+        <h3>Senha</h3>
+        <input type="password" placeholder="Senha">
+
+        <button type="button" id="btnEntrar">Entrar</button>
+    </div>
+    </form>
+
+    <form method="POST" action="" onsubmit="processarCadastro(event)">
+      <input type="hidden" name="acao" value="cadastro">
+    <div class="cadastro">
+        <div class="titulos">
+            <h1>Crie uma conta</h1>
+            <h2>Se você ainda não tem uma conta</h2>
+        </div>
+
+        <div class="infoDeLogin">
+        <div class="nomes">
+            <div class="completo">
+                <h3>Nome Completo</h3>
+                <input type="text" placeholder="Escreva seu nome completo">
+            </div>
+
+            <div class="usuario">
+                <h3>Nome de Usuário</h3>
+                <input type="text" placeholder="Escolha um nome de usuário">
+            </div>
+        </div>
+
+        <div class="emailESenha">
+            <div class="email">
+                <h3>E-mail</h3>
+                <input type="email" placeholder="Insira seu e-mail">
+            </div>
+
+            <div class="senha">
+                <h3>Senha</h3>
+                <input type="password" placeholder="Crie uma senha">
+            </div>
+        </div>
+        </div>
+        
+        <button type="button" id="btnCadastrar">Criar Conta</button>
+    </div>
+    </form>
+</div>
+
+    <script src="login.js"></script>
+
+    <div id="footer-container"></div>
+
+<script>
+  async function carregarFooter() {
+    try {
+      const basePrefix = getBasePrefix();
+      const response = await fetch(`${basePrefix}Incluir/Footer/footer.html`);
+      const rawHtml = await response.text();
+      const html = rawHtml.replace(/\.\.\//g, basePrefix);
+      document.getElementById('footer-container').innerHTML = html;
+
+      if (!document.querySelector(`link[href="${basePrefix}Incluir/Footer/footer.css"]`)) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = `${basePrefix}Incluir/Footer/footer.css`;
+        document.head.appendChild(link);
+      }
+
+    } catch (error) {
+      console.error('Erro ao carregar o footer:', error);
+    }
+  }
+
+  carregarFooter();
+  </script>
+</body>
+</html>
+

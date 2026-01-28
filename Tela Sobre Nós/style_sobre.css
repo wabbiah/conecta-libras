@@ -1,0 +1,407 @@
+@font-face {
+        font-family: gliker;
+        src: url('../Fontes/gliker-regular.ttf');
+    }
+
+    @font-face {
+        font-family: sanchez;
+        src: url('../Fontes/sanchez-font.ttf');
+    }
+
+.body {
+    margin: 0;
+    background-color: #F0F8FF;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 80px; /* 🔧 Espaço para o menu fixo */
+    overflow-x: hidden;
+    font-family: sanchez;
+    justify-content: center;
+}
+
+.oi {
+    background-color: red;
+    width: 50%;
+    height: 50%;
+}
+
+.banner1 {
+    margin-left: auto;
+    margin-right: 7%;
+    width: 490px;
+    height: 490px;
+}
+.bannerOutro {
+    margin-top: 75px;
+    margin-right: auto;
+    width: 490px;
+    height: 490px;
+}
+.content {
+    width: 1100px;
+    text-align: center;
+    margin: auto;
+    
+}
+.section2 {
+    padding-top: 300px;
+    max-width: 1600px;
+    margin-bottom: 150px;
+    height: 850px;
+    width: 1700px;
+    background-image: url('../Imagens/Banner2.png');
+    background-size: cover;
+    background-position: center;
+    margin: 0 0 0 -6%;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+    color: white;
+    position: relative;
+    z-index: 1; /* 🔧 Fica atrás do codBack e dos cards */
+}
+.space {
+    margin-top: 180px;
+}
+
+
+
+.backgroundLua {
+    width: 500px;
+    height: 500px;
+}
+
+.imagenzona {
+    object-fit: cover;
+    width: 500px;
+    height: 500px;
+    margin-top: -5%;
+}
+
+.textoSection1 {
+    position: relative;
+    z-index: 1;
+    max-width: 660px;
+}
+.textoSection3 {
+    position: relative;
+    z-index: 1;
+    max-width: 660px;
+}
+.textoSection4 {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    text-align: center;
+    margin-right: 6%;
+    margin-top: -65px;
+}
+.textoSection5 {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin-right: 6%;
+    margin-top: -65px;
+}
+
+.section1 {
+    margin-top: 65px;
+    padding: 85px 0;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    height: 700px;
+    overflow: hidden;
+}
+.lua-fundo {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 890px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.section1 > *:not(.lua-fundo) {
+    position: relative;
+    z-index: 1;
+}
+.section3 {
+    margin-top: -150px;
+    padding: 65px 0;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin-right: -7%;
+    height: auto;
+}
+.section4 {
+    margin-top: 65px;
+    padding: 65px 0;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    margin-right: -7%;
+    height: auto;
+}
+.section5 {
+    margin: 90px 0;
+    display: flex;
+    flex-direction: row;
+}
+.section5 h4 {
+    margin-top: auto;
+}
+
+h2 {
+    font-size: 55px;
+    font-family: gliker;
+    color: #063F5C;
+}
+
+.content h2 {
+    font-size: 55px;
+    font-family: gliker;
+    color: white;
+}
+
+h6 {
+    font-size: 25px;
+    font-weight: 200
+}
+h3 {
+    font-size: 22px;
+}
+h4 {
+    font-size: 18px;
+}
+.icone {
+    height: 100px;
+    width: 100px;
+    position: relative;
+}
+.circulo {
+    padding: 20px;
+    position: absolute;
+    top: -50px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #FFBE1D;
+    margin: 0 65px;
+}
+
+.card h3 {
+    margin-top: 55px;
+    margin-left: -15px;
+}
+
+.card { 
+    border-radius: 4px;
+    background-color: #F0F8FF;
+    padding: 55px 15px;
+    position: relative;
+    text-align: center;
+    width: 280px;
+    height: auto;
+    background: linear-gradient(to bottom left, rgba(65, 158, 189, 0.5), rgba(240, 248, 255, 0)),
+    white;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+}
+.card:hover {
+    background-color: #fbf5ec;
+    scale: 1.05;
+    transition: 1s ease-in;
+    transition: 1s ease-out;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+}
+
+.card1 {
+    position: absolute;
+    top: -100px; /* 🔧 Ajustado: mais pra baixo para não cobrir o texto */
+    left: 8%;
+    border-radius: 20px;
+    z-index: 10; /* 🔧 Fica acima da section2 */
+}
+
+.card3 h3{
+   padding-bottom: 14px;
+}
+.card3 h4 {
+    padding-bottom: 14px;
+}
+.card1 h3{
+   padding-bottom: 14px;
+}
+.card1 h4 {
+    padding-bottom: 14px;
+}
+.card2 {
+    position: absolute;
+    top: -30px; /* 🔧 Ajustado: um pouco mais pra cima */
+    left: 39%;
+    z-index: 10; /* 🔧 Fica acima da section2 */
+}
+.card2 h3 {
+    padding: 0 15px;
+}
+.card3 {
+    position: absolute;
+    top: -100px; /* 🔧 Ajustado: mais pra baixo para não cobrir o texto */
+    right: 8%;
+    z-index: 10; /* 🔧 Fica acima da section2 */
+}
+.sobrepor {
+    height: 400px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+
+.dividido {
+    background-color: #FFBE1D;
+    height: 2px;
+    width: 30%;
+    margin: 20px 35%;;
+}
+.botao {
+    background-color: #FFBE1D;
+    color: white;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 350px;
+    padding: 7px;
+    margin: 35px 15% 15px; /* 🔧 Aumentei o espaçamento superior de 0 para 35px */
+    transition: 0.3s ease;
+}
+.botao:hover {
+    cursor: pointer;
+    color: black;
+}
+.botao h6 {
+    margin: 0;
+    padding: 0;
+    
+}
+.section5 h4 {
+  margin-left: auto;
+  opacity: 0.6;
+  position: relative;
+  display: inline-block;
+  overflow-wrap: break-word;
+  line-height: 28px;
+}
+
+.section5 h4::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #063F5C;
+  transition: width 0.6s ease;
+}
+
+.section5 h4.underline-active::after {
+  width: 100%;
+}
+
+
+
+.codBack {
+    position: absolute;
+    bottom: -370px; /* 🔧 Ajustado: era -450px, agora compensa o menu */
+    background-image: url('../Imagens/codBack.png');
+    background-size: cover;
+    max-width: 750px;
+    margin: 0 23%;
+    background-position: center;
+    height: 340px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    border-end-end-radius: 25px;
+    border-end-start-radius: 25px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+    z-index: 10; /* 🔧 Fica acima da section2 */
+}
+.codigo {
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 275px;
+    width: 750px;
+    position: relative;
+    padding: 0 35px;
+    
+}
+.transcreva{
+    color: #063F5C;
+}
+.codigo h4 {
+    max-width: 650px;
+    margin: 30px 0;
+    font-size: 20px;
+}
+.qrCode {
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
+  position: absolute;
+  top: -100px;
+  background-color: #063F5C;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.qrCode img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 20px;
+}
+
+.lateral {
+    max-width: 680px;
+    display: flex;
+    flex-direction: row;
+}
+.lateral h3 {
+    color: #01283C;
+    margin-left: 250px;
+    font-size: 28px;
+    text-align: left;
+}
+.baixe {
+    width: 645px;
+    display: flex;
+    flex-direction: row;
+    color: white;
+    border-radius: 10px;
+    padding: 8px 15px;
+    background: #419EBD;
+    justify-content: center;
+    align-items: center;
+}
+.baixe:hover {
+    cursor: pointer;
+    background-color: #063F5C;
+    transition: all 0.5s ease;
+}
+.baixe h4 {
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.baixe h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.dividendo {
+    margin: 0 15px;
+    background-color: #F0F8FF;
+    width: 1px;
+    height: 25px;
+}
